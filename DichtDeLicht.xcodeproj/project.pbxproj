@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DF70FAFC02BCBEF08359F15 /* Pods_DichtDeLichtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20E1401943FCC7F7A1B2C6A /* Pods_DichtDeLichtTests.framework */; };
 		314D9C4C24661552005AD3B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C4B24661552005AD3B6 /* AppDelegate.swift */; };
 		314D9C4E24661552005AD3B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C4D24661552005AD3B6 /* SceneDelegate.swift */; };
 		314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C4F24661552005AD3B6 /* DichtDeLicht.xcdatamodeld */; };
@@ -16,6 +17,10 @@
 		314D9C5B24661556005AD3B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314D9C5924661556005AD3B6 /* LaunchScreen.storyboard */; };
 		314D9C6624661557005AD3B6 /* DichtDeLichtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C6524661557005AD3B6 /* DichtDeLichtTests.swift */; };
 		314D9C7124661557005AD3B6 /* DichtDeLichtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7024661557005AD3B6 /* DichtDeLichtUITests.swift */; };
+		314D9C7F246615BC005AD3B6 /* DeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */; };
+		314D9C812466173F005AD3B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 314D9C802466173F005AD3B6 /* GoogleService-Info.plist */; };
+		AFA8CAF2169BB88B9AF6C007 /* Pods_DichtDeLicht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */; };
+		BF225975E035729A72FD5A59 /* Pods_DichtDeLicht_DichtDeLichtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E157503302B0D79C7530680D /* Pods_DichtDeLicht_DichtDeLichtUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0509E10DCADDF5232FF7285D /* Pods-DichtDeLicht-DichtDeLichtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLicht-DichtDeLichtUITests.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLicht-DichtDeLichtUITests/Pods-DichtDeLicht-DichtDeLichtUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		314D9C4824661552005AD3B6 /* DichtDeLicht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DichtDeLicht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314D9C4B24661552005AD3B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		314D9C4D24661552005AD3B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 		314D9C6C24661557005AD3B6 /* DichtDeLichtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DichtDeLichtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		314D9C7024661557005AD3B6 /* DichtDeLichtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DichtDeLichtUITests.swift; sourceTree = "<group>"; };
 		314D9C7224661557005AD3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentifier.swift; sourceTree = "<group>"; };
+		314D9C802466173F005AD3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLicht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.release.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.release.xcconfig"; sourceTree = "<group>"; };
+		A80E0C125C01E81314D6D23C /* Pods-DichtDeLicht-DichtDeLichtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLicht-DichtDeLichtUITests.release.xcconfig"; path = "Target Support Files/Pods-DichtDeLicht-DichtDeLichtUITests/Pods-DichtDeLicht-DichtDeLichtUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C20E1401943FCC7F7A1B2C6A /* Pods_DichtDeLichtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLichtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E157503302B0D79C7530680D /* Pods_DichtDeLicht_DichtDeLichtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLicht_DichtDeLichtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F4BE9B10C188B4D2A467CF /* Pods-DichtDeLicht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLicht.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLicht/Pods-DichtDeLicht.debug.xcconfig"; sourceTree = "<group>"; };
+		F83B8041ABD3E2AB40F7549E /* Pods-DichtDeLicht.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLicht.release.xcconfig"; path = "Target Support Files/Pods-DichtDeLicht/Pods-DichtDeLicht.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA8CAF2169BB88B9AF6C007 /* Pods_DichtDeLicht.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF70FAFC02BCBEF08359F15 /* Pods_DichtDeLichtTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +90,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF225975E035729A72FD5A59 /* Pods_DichtDeLicht_DichtDeLichtUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17ECB7432BE639244A52E151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */,
+				E157503302B0D79C7530680D /* Pods_DichtDeLicht_DichtDeLichtUITests.framework */,
+				C20E1401943FCC7F7A1B2C6A /* Pods_DichtDeLichtTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		314D9C3F24661552005AD3B6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,8 @@
 				314D9C6424661557005AD3B6 /* DichtDeLichtTests */,
 				314D9C6F24661557005AD3B6 /* DichtDeLichtUITests */,
 				314D9C4924661552005AD3B6 /* Products */,
+				FB787A72B2334D896AE54862 /* Pods */,
+				17ECB7432BE639244A52E151 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +132,7 @@
 		314D9C4A24661552005AD3B6 /* DichtDeLicht */ = {
 			isa = PBXGroup;
 			children = (
+				314D9C802466173F005AD3B6 /* GoogleService-Info.plist */,
 				314D9C4B24661552005AD3B6 /* AppDelegate.swift */,
 				314D9C4D24661552005AD3B6 /* SceneDelegate.swift */,
 				314D9C5224661552005AD3B6 /* ContentView.swift */,
@@ -109,6 +141,7 @@
 				314D9C5C24661556005AD3B6 /* Info.plist */,
 				314D9C4F24661552005AD3B6 /* DichtDeLicht.xcdatamodeld */,
 				314D9C5624661556005AD3B6 /* Preview Content */,
+				314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */,
 			);
 			path = DichtDeLicht;
 			sourceTree = "<group>";
@@ -139,6 +172,20 @@
 			path = DichtDeLichtUITests;
 			sourceTree = "<group>";
 		};
+		FB787A72B2334D896AE54862 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4BE9B10C188B4D2A467CF /* Pods-DichtDeLicht.debug.xcconfig */,
+				F83B8041ABD3E2AB40F7549E /* Pods-DichtDeLicht.release.xcconfig */,
+				0509E10DCADDF5232FF7285D /* Pods-DichtDeLicht-DichtDeLichtUITests.debug.xcconfig */,
+				A80E0C125C01E81314D6D23C /* Pods-DichtDeLicht-DichtDeLichtUITests.release.xcconfig */,
+				52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */,
+				7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 314D9C7524661557005AD3B6 /* Build configuration list for PBXNativeTarget "DichtDeLicht" */;
 			buildPhases = (
+				15252B1DCD0B3E785F3A6189 /* [CP] Check Pods Manifest.lock */,
 				314D9C4424661552005AD3B6 /* Sources */,
 				314D9C4524661552005AD3B6 /* Frameworks */,
 				314D9C4624661552005AD3B6 /* Resources */,
+				54A01AF104E6BF2E9401FEF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 314D9C7824661557005AD3B6 /* Build configuration list for PBXNativeTarget "DichtDeLichtTests" */;
 			buildPhases = (
+				9ADAD690972EFC7174EF710A /* [CP] Check Pods Manifest.lock */,
 				314D9C5D24661557005AD3B6 /* Sources */,
 				314D9C5E24661557005AD3B6 /* Frameworks */,
 				314D9C5F24661557005AD3B6 /* Resources */,
@@ -181,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 314D9C7B24661557005AD3B6 /* Build configuration list for PBXNativeTarget "DichtDeLichtUITests" */;
 			buildPhases = (
+				3B49AE876EEA779F0F6C54B5 /* [CP] Check Pods Manifest.lock */,
 				314D9C6824661557005AD3B6 /* Sources */,
 				314D9C6924661557005AD3B6 /* Frameworks */,
 				314D9C6A24661557005AD3B6 /* Resources */,
+				005DB23EB4FA618A96581C75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				314D9C5B24661556005AD3B6 /* LaunchScreen.storyboard in Resources */,
+				314D9C812466173F005AD3B6 /* GoogleService-Info.plist in Resources */,
 				314D9C5824661556005AD3B6 /* Preview Assets.xcassets in Resources */,
 				314D9C5524661556005AD3B6 /* Assets.xcassets in Resources */,
 			);
@@ -265,11 +318,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		005DB23EB4FA618A96581C75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht-DichtDeLichtUITests/Pods-DichtDeLicht-DichtDeLichtUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht-DichtDeLichtUITests/Pods-DichtDeLicht-DichtDeLichtUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht-DichtDeLichtUITests/Pods-DichtDeLicht-DichtDeLichtUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15252B1DCD0B3E785F3A6189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DichtDeLicht-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B49AE876EEA779F0F6C54B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DichtDeLicht-DichtDeLichtUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54A01AF104E6BF2E9401FEF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht/Pods-DichtDeLicht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht/Pods-DichtDeLicht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DichtDeLicht/Pods-DichtDeLicht-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ADAD690972EFC7174EF710A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DichtDeLichtTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		314D9C4424661552005AD3B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314D9C7F246615BC005AD3B6 /* DeviceIdentifier.swift in Sources */,
 				314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */,
 				314D9C4C24661552005AD3B6 /* AppDelegate.swift in Sources */,
 				314D9C5324661552005AD3B6 /* ContentView.swift in Sources */,
@@ -436,6 +593,7 @@
 		};
 		314D9C7624661557005AD3B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7F4BE9B10C188B4D2A467CF /* Pods-DichtDeLicht.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +614,7 @@
 		};
 		314D9C7724661557005AD3B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F83B8041ABD3E2AB40F7549E /* Pods-DichtDeLicht.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +635,7 @@
 		};
 		314D9C7924661557005AD3B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +658,7 @@
 		};
 		314D9C7A24661557005AD3B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +681,7 @@
 		};
 		314D9C7C24661557005AD3B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0509E10DCADDF5232FF7285D /* Pods-DichtDeLicht-DichtDeLichtUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +702,7 @@
 		};
 		314D9C7D24661557005AD3B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A80E0C125C01E81314D6D23C /* Pods-DichtDeLicht-DichtDeLichtUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

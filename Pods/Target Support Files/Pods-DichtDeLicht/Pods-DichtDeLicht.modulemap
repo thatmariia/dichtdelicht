@@ -1,0 +1,6 @@
+framework module Pods_DichtDeLicht {
+  umbrella header "Pods-DichtDeLicht-umbrella.h"
+
+  export *
+  module * { export * }
+}
