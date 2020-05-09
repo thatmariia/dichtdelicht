@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+
+/// takes a home name and fetches all the rooms of this home
 class HomeObserver : ObservableObject {
     @Published var rooms = [Room]()
     var home_name: String = "royal_house"
@@ -19,6 +21,8 @@ class HomeObserver : ObservableObject {
         let homes = Firestore.firestore().collection("home")
         
         let home_query = homes.whereField("name", isEqualTo: home_name)
+        
+        /// listening to home
         home_query.addSnapshotListener { (home_snap, home_err) in
             if (home_err != nil) {
                 print("Error home_err: \(home_err!.localizedDescription)")

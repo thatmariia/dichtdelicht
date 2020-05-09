@@ -19,8 +19,22 @@ struct RoomsManagerView: View {
     
     @State var color = UIColor.red
     
+    fileprivate func combine_all_rooms() -> Room {
+        var all_LEDs : [LED] = []
+        
+        for room in home.rooms{
+            for led in room.LEDs{
+                all_LEDs.append(led)
+            }
+        }
+        
+        return Room(name: "All", LEDs: all_LEDs)
+    }
+    
     fileprivate func room_choose() -> some View{
         return HStack {
+            
+            /// letting choose each room of the home
             ForEach(home.rooms, id: \.self) { room in
                 
                 ZStack {
@@ -29,6 +43,14 @@ struct RoomsManagerView: View {
                     }) {
                         Text(room.name)
                     }
+                }
+            }
+            /// letting choose all rooms
+            ZStack {
+                Button(action: {
+                    self.curr_room = self.combine_all_rooms()
+                }) {
+                    Text("All")
                 }
             }
         }
@@ -52,8 +74,8 @@ struct RoomsManagerView: View {
                 }
             }
             
-            
-            
+            Text("Choose a LED strip:")
+            //TODO:: choose led
             
             Text("curr room = " + curr_room.name)
             Text("leds = " +  "\(curr_room.LEDs)")
