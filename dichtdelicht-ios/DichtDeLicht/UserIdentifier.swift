@@ -13,7 +13,8 @@ import CoreData
 
 class UserIdentifier : ObservableObject  {
     
-    @Published var user = User(user_id: "", username: "")
+    @Published var user_id = ""
+    @Published var username = ""
     
     init() {
         
@@ -42,9 +43,8 @@ class UserIdentifier : ObservableObject  {
                 return
             }
             let data = snap!.documents[0]
-            self.user = User(user_id  : data.get("user_id")  as! String,
-                             username : data.get("username") as! String)
-            
+            self.user_id = data.get("user_id")  as! String
+            self.username = data.get("username") as! String
         }
     }
     

@@ -19,7 +19,6 @@
 		314D9C7124661557005AD3B6 /* DichtDeLichtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7024661557005AD3B6 /* DichtDeLichtUITests.swift */; };
 		314D9C7F246615BC005AD3B6 /* UserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */; };
 		314D9C812466173F005AD3B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 314D9C802466173F005AD3B6 /* GoogleService-Info.plist */; };
-		314D9C83246621E2005AD3B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C82246621E2005AD3B6 /* User.swift */; };
 		314D9C862466E590005AD3B6 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 314D9C852466E590005AD3B6 /* ColorKit */; };
 		3178A9D52466FB4100807402 /* ColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3178A9D42466FB4100807402 /* ColorPicker */; };
 		3178A9D72466FD4000807402 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9D62466FD4000807402 /* UIColor.swift */; };
@@ -63,7 +62,6 @@
 		314D9C7224661557005AD3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifier.swift; sourceTree = "<group>"; };
 		314D9C802466173F005AD3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		314D9C82246621E2005AD3B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3178A9D62466FD4000807402 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLicht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				314D9C4F24661552005AD3B6 /* DichtDeLicht.xcdatamodeld */,
 				314D9C5624661556005AD3B6 /* Preview Content */,
 				314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */,
-				314D9C82246621E2005AD3B6 /* User.swift */,
 			);
 			path = DichtDeLicht;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				314D9C7F246615BC005AD3B6 /* UserIdentifier.swift in Sources */,
 				3178A9D72466FD4000807402 /* UIColor.swift in Sources */,
 				314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */,
-				314D9C83246621E2005AD3B6 /* User.swift in Sources */,
 				314D9C4C24661552005AD3B6 /* AppDelegate.swift in Sources */,
 				314D9C5324661552005AD3B6 /* ContentView.swift in Sources */,
 				314D9C4E24661552005AD3B6 /* SceneDelegate.swift in Sources */,

@@ -17,13 +17,13 @@ struct ContentView: View {
     var body: some View {
         VStack{
             //Text(user.user.user_id)
-            Text("Hi there, " + user.user.username)
+            Text("Hi there, " + user.username)
             
             Spacer()
             
             ColorPicker(color: $color, strokeWidth: 30)
                 .frame(width: 300, height: 300, alignment: .center)
-            //Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
+            Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
         }
     }
 }
