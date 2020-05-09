@@ -1,0 +1,45 @@
+@startuml
+
+title Entity structure
+
+note right of Home: Users could have\na home. TBD
+
+class Home {
+  name: string
+}
+
+class Room {
+  name: string
+  LED_ids: array(string)
+}
+
+class LED {
+  name: string
+  r: int
+  g: int
+  b:int
+}
+
+class Pattern {
+  name: string
+  rpm: interface
+}
+
+note left of Pattern: TBD
+
+enum LEDPattern {
+  Static
+  Blinking
+  Running
+}
+
+note right of LEDPattern {
+  TBD
+}
+
+Home -->"*" Room
+Room -->"*" LED
+LED --> Pattern
+Pattern -> LEDPattern
+
+@enduml
