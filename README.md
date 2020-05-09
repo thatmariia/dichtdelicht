@@ -4,4 +4,4 @@ A cool IOT project to control LED lights using a RaspberryPi, ESP32, and Iphone 
 
 # Authors 
 * Mariia Turchina
-* Sander Steeghs
+* Sander Steeghs (hottest boy in the universe)
