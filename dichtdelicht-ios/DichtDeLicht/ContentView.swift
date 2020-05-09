@@ -19,8 +19,8 @@ struct ContentView: View {
                 // if user logged in for the first time
                 // TODO:: go setup the username, and add or search for home & rooms
             } else {
-                // TODO:: choose home (view with home choosing if more than 1? or make a default?)
-                RoomsManagerView(user: UserIdentifier(), home: HomeObserver(home_name: "royal_house"))
+                HomeSelectionView(user: UserIdentifier(),
+                                  user_homes: UserHomesObserver(username: user.username))
             }
         }
     }

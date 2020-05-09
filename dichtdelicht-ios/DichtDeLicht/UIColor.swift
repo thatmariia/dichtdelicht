@@ -17,7 +17,7 @@ extension UIColor {
         var alpha: CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        return (red*255, green*255, blue*255, alpha)
+        return (round(red*255), round(green*255), round(blue*255), alpha)
     }
 }
 

@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+// TODO:: add change listeners
 
 /// takes a home name and fetches all the rooms of this home
 class HomeObserver : ObservableObject {
@@ -64,6 +65,7 @@ class HomeObserver : ObservableObject {
                             var room_LEDs : [LED] = []
                             
                             for led in LEDs_snap!.documents {
+                                print(led.documentID)
                                 let new_LED = LED(doc_id: led.documentID,
                                                   name        : led.get("name")         as! String,
                                                   pattern_name: led.get("pattern_name") as! String,
