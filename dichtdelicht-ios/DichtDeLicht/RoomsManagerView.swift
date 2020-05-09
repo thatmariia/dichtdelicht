@@ -16,6 +16,7 @@ struct RoomsManagerView: View {
     
     @ObservedObject var home : HomeObserver
     @State var curr_room : Room = Room(name: "", LEDs: [])
+    @State var curr_LEDs : [LED] = []
     
     @State var color = UIColor.red
     
@@ -28,10 +29,10 @@ struct RoomsManagerView: View {
             }
         }
         
-        return Room(name: "All", LEDs: all_LEDs)
+        return Room(name: "All rooms", LEDs: all_LEDs)
     }
     
-    fileprivate func room_choose() -> some View{
+    fileprivate func rooms_stack() -> some View {
         return HStack {
             
             /// letting choose each room of the home
@@ -50,7 +51,71 @@ struct RoomsManagerView: View {
                 Button(action: {
                     self.curr_room = self.combine_all_rooms()
                 }) {
-                    Text("All")
+                    Text("All rooms")
+                }
+            }
+        }
+    }
+    
+    fileprivate func room_choose() -> some View {
+        return VStack{
+            Text("Choose a room:")
+            if (home.rooms.count == 0){
+                Text("You have no rooms")
+            } else {
+                ScrollView(.horizontal, showsIndicators: false){
+                    rooms_stack()
+                }
+            }
+        }
+    }
+
+    
+    fileprivate func combine_all_LEDs() -> [LED] {
+        var all_LEDs : [LED] = []
+        
+        for led in curr_room.LEDs {
+            all_LEDs.append(led)
+        }
+        
+        return all_LEDs
+    }
+    
+    fileprivate func LED_stack() -> some View{
+        return HStack{
+            
+            /// letting choose each LED in a selected room
+            ForEach(curr_room.LEDs, id: \.self) { led in
+                
+                ZStack {
+                    Button(action: {
+                        self.curr_LEDs = [led]
+                    }) {
+                        Text(led.name)
+                    }
+                }
+                
+            }
+            
+            /// letting choose all LEDs
+            ZStack {
+                Button(action: {
+                    self.curr_LEDs = self.combine_all_LEDs()
+                }) {
+                    Text("All LEDs")
+                }
+            }
+        }
+    }
+    
+    fileprivate func LED_choose() -> some View {
+        return VStack{
+            Text("Choose a LED strip:")
+            if(curr_room.LEDs.count == 0){
+                Text("You have no LED strips in \(curr_room.name)")
+            } else {
+                ScrollView(.horizontal, showsIndicators: false){
+                    LED_stack()
                 }
             }
         }
@@ -58,31 +123,27 @@ struct RoomsManagerView: View {
     
     var body: some View {
         VStack{
-            //Text(user.user.user_id)
+
             Text("Hi there, " + user.username)
             Text("Home: " + user_home)
-            Text("Rooms: " + array_to_string(array: get_room_names()))
             
             Spacer()
             
-            Text("Choose a room:")
-            if (get_room_names().count == 0){
-                Text("You have no rooms")
-            } else {
-                ScrollView(.horizontal, showsIndicators: false){
-                    room_choose()
-                }
+            // TODO:: assign some initial values to a room and LED
+            room_choose()
+            
+            if (curr_room.name != ""){
+                LED_choose()
             }
-            
-            Text("Choose a LED strip:")
-            //TODO:: choose led
-            
+
             Text("curr room = " + curr_room.name)
-            Text("leds = " +  "\(curr_room.LEDs)")
+            Text("leds = " +  "\(curr_LEDs)")
             
-            ColorPicker(color: $color, strokeWidth: 30)
-                .frame(width: 300, height: 300, alignment: .center)
-            Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
+            VStack{
+                ColorPicker(color: $color, strokeWidth: 30)
+                    .frame(width: 300, height: 300, alignment: .center)
+                Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
+            }
         }
     }
     
