@@ -19,6 +19,21 @@ struct RoomsManagerView: View {
     
     @State var color = UIColor.red
     
+    fileprivate func room_choose() -> some View{
+        return HStack {
+            ForEach(home.rooms, id: \.self) { room in
+                
+                ZStack {
+                    Button(action: {
+                        self.curr_room = room
+                    }) {
+                        Text(room.name)
+                    }
+                }
+            }
+        }
+    }
+    
     var body: some View {
         VStack{
             //Text(user.user.user_id)
@@ -28,25 +43,17 @@ struct RoomsManagerView: View {
             
             Spacer()
             
-            Text("Choose a room")
+            Text("Choose a room:")
             if (get_room_names().count == 0){
                 Text("You have no rooms")
             } else {
-                ScrollView(.vertical, showsIndicators: true){
-                    HStack {
-                        ForEach(home.rooms, id: \.self) { room in
-                            
-                            ZStack {
-                                Button(action: {
-                                    self.curr_room = room
-                                }) {
-                                    Text(room.name)
-                                }
-                            }
-                        }
-                    }
+                ScrollView(.horizontal, showsIndicators: false){
+                    room_choose()
                 }
             }
+            
+            
+            
             
             Text("curr room = " + curr_room.name)
             Text("leds = " +  "\(curr_room.LEDs)")

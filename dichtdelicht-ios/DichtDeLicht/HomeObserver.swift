@@ -36,6 +36,7 @@ class HomeObserver : ObservableObject {
                     }
                     
                     /// go though rooms in a home
+                    self.rooms = []
                     for room in rooms_snap!.documents{
                         let room_name = room.get("name") as! String
                         
@@ -47,7 +48,6 @@ class HomeObserver : ObservableObject {
                             }
                             
                             /// go through leds in a room
-                            self.rooms = []
                             var room_LEDs : [LED] = []
                             
                             for led in LEDs_snap!.documents {
