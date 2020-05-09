@@ -49,6 +49,8 @@ class UserIdentifier : ObservableObject  {
             let data = snap!.documents[0]
             self.user_id    = data.get("user_id")    as! String
             self.username   = data.get("username")   as! String
+            //print("DATABASE HOME_NAMES:")
+            //print(data.get("home_names") as! [String])
             self.home_names = data.get("home_names") as! [String]
         }
     }
