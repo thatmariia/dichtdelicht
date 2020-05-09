@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,9 @@
 		314D9C5B24661556005AD3B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314D9C5924661556005AD3B6 /* LaunchScreen.storyboard */; };
 		314D9C6624661557005AD3B6 /* DichtDeLichtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C6524661557005AD3B6 /* DichtDeLichtTests.swift */; };
 		314D9C7124661557005AD3B6 /* DichtDeLichtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7024661557005AD3B6 /* DichtDeLichtUITests.swift */; };
-		314D9C7F246615BC005AD3B6 /* DeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */; };
+		314D9C7F246615BC005AD3B6 /* UserIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */; };
 		314D9C812466173F005AD3B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 314D9C802466173F005AD3B6 /* GoogleService-Info.plist */; };
+		314D9C83246621E2005AD3B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D9C82246621E2005AD3B6 /* User.swift */; };
 		AFA8CAF2169BB88B9AF6C007 /* Pods_DichtDeLicht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */; };
 		BF225975E035729A72FD5A59 /* Pods_DichtDeLicht_DichtDeLichtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E157503302B0D79C7530680D /* Pods_DichtDeLicht_DichtDeLichtUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,8 +58,9 @@
 		314D9C6C24661557005AD3B6 /* DichtDeLichtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DichtDeLichtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		314D9C7024661557005AD3B6 /* DichtDeLichtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DichtDeLichtUITests.swift; sourceTree = "<group>"; };
 		314D9C7224661557005AD3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentifier.swift; sourceTree = "<group>"; };
+		314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifier.swift; sourceTree = "<group>"; };
 		314D9C802466173F005AD3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		314D9C82246621E2005AD3B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLicht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.release.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +143,8 @@
 				314D9C5C24661556005AD3B6 /* Info.plist */,
 				314D9C4F24661552005AD3B6 /* DichtDeLicht.xcdatamodeld */,
 				314D9C5624661556005AD3B6 /* Preview Content */,
-				314D9C7E246615BC005AD3B6 /* DeviceIdentifier.swift */,
+				314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */,
+				314D9C82246621E2005AD3B6 /* User.swift */,
 			);
 			path = DichtDeLicht;
 			sourceTree = "<group>";
@@ -182,7 +185,6 @@
 				52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */,
 				7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -426,8 +428,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314D9C7F246615BC005AD3B6 /* DeviceIdentifier.swift in Sources */,
+				314D9C7F246615BC005AD3B6 /* UserIdentifier.swift in Sources */,
 				314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */,
+				314D9C83246621E2005AD3B6 /* User.swift in Sources */,
 				314D9C4C24661552005AD3B6 /* AppDelegate.swift in Sources */,
 				314D9C5324661552005AD3B6 /* ContentView.swift in Sources */,
 				314D9C4E24661552005AD3B6 /* SceneDelegate.swift in Sources */,

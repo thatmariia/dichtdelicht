@@ -11,9 +11,9 @@ import UIKit
 import Firebase
 import CoreData
 
-class UserIdentifier : ObservableObject {
+class UserIdentifier : ObservableObject  {
     
-    @Published var user = User()
+    @Published var user = User(user_id: "", username: "")
     
     init() {
         
@@ -22,6 +22,8 @@ class UserIdentifier : ObservableObject {
         let core_user = get_coredata_uuid()
         let is_existing_user = core_user.0
         let user_id = core_user.1
+        
+        print("user", is_existing_user, user_id)
         
         if (!is_existing_user){
             // add user to database
@@ -58,11 +60,11 @@ class UserIdentifier : ObservableObject {
     func get_coredata_uuid() -> (Bool, String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: "UserID", in: context)
         let new_user = NSManagedObject(entity: entity!, insertInto: context)
         
         // try to fetch user_id from coredata
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserID")
         request.returnsObjectsAsFaults = false
         
         do {
@@ -71,20 +73,23 @@ class UserIdentifier : ObservableObject {
                 if (result.count > 1){
                     print("more than 1 user in coredata")
                 } else {
-                    let user_id = res.value(forKey: "user_id") as! String
-                    return (true, user_id)
+                    if let user_id = res.value(forKey: "user_id"){
+                        return (true, user_id as! String)
+                    } else {
+                        // add new user to coredata
+                        let new_user_id = UUID().uuidString
+                        new_user.setValue(new_user_id, forKey: "user_id")
+                        do {
+                            try context.save()
+                        } catch {
+                            print("Failed saving")
+                        }
+                        return (false, new_user_id)
+                    }
                 }
             }
         } catch {
-            // add new user to coredata
-            let new_user_id = UUID().uuidString
-            new_user.setValue(new_user_id, forKey: "user_id")
-            do {
-                try context.save()
-            } catch {
-                print("Failed saving")
-            }
-            return (false, new_user_id)
+            print("coredata fetch failed")
         }
         print("ended do-catch")
         return (false, "meow_uuid")

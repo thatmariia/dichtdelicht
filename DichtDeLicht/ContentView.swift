@@ -9,13 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var user : UserIdentifier
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack{
+            Text(user.user.user_id)
+            Text(user.user.username)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
+}*/
