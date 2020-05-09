@@ -32,8 +32,10 @@ struct RoomsManagerView: View {
                 // TODO:: assign some initial values to a room and LED
                 // TODO:: make it possible to select multiple rooms and LEDs
                 room_choose()
+                // TODO:: add an option to add more rooms
                 if (curr_rooms.name != ""){
                     LED_choose()
+                    // TODO:: add an option to add more LEDs
                     
                     if (curr_LEDs.count == 0){
                         Text("Please select a LED strip")

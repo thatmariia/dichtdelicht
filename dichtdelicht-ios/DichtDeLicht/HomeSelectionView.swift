@@ -50,6 +50,8 @@ struct HomeSelectionView: View {
                     }
                 }
             }
+            
+            // TODO:: add an option to add more homes
         }.padding()
         }
     }
