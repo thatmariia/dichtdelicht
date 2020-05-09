@@ -17,7 +17,7 @@ struct ColorWheelView: View {
     @ObservedObject var home : HomeObserver
     
     var user_home : String
-    var curr_room : Room
+    var curr_rooms : Room
     var curr_LEDs : [LED]
     
     var body: some View {
@@ -68,9 +68,9 @@ struct ColorWheelView: View {
                 for led in LED_snap!.documents{
                     if (changing_LEDs_ids.contains(led.documentID)){
                         let LED_path = LEDs_path.document(led.documentID)
-                        LED_path.setData(["R": self.color.rgba.red,
-                                          "G": self.color.rgba.green,
-                                          "B": self.color.rgba.blue]) { (setLED_err) in
+                        LED_path.setData(["R": Int(self.color.rgba.red),
+                                          "G": Int(self.color.rgba.green),
+                                          "B": Int(self.color.rgba.blue)], merge: true) { (setLED_err) in
                             if (setLED_err != nil) {
                                 print("Error setLED_err: \(setLED_err!.localizedDescription)")
                                 return
@@ -86,8 +86,8 @@ struct ColorWheelView: View {
     fileprivate func get_room_ids(home_path: DocumentReference) -> [String]{
         var changing_room_ids: [String] = []
         
-        if (curr_room.name != ALL_ROOMS){
-            changing_room_ids.append(curr_room.doc_id)
+        if (curr_rooms.name != ALL_ROOMS){
+            changing_room_ids.append(curr_rooms.doc_id)
         } else {
             let rooms_collections = home_path.collection("rooms")
             rooms_collections.getDocuments { (rooms_snap, rooms_err) in
