@@ -14,14 +14,16 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Text(user.user.user_id)
-            Text(user.user.username)
+            //Text(user.user.user_id)
+            Text("Hi there, " + user.user.username)
+            
+            Spacer()
         }
     }
 }
 
-/*struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(user: UserIdentifier())
     }
-}*/
+}
