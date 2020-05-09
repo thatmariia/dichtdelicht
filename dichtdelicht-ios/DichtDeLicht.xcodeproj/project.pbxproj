@@ -22,7 +22,7 @@
 		314D9C862466E590005AD3B6 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 314D9C852466E590005AD3B6 /* ColorKit */; };
 		3178A9D52466FB4100807402 /* ColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 3178A9D42466FB4100807402 /* ColorPicker */; };
 		3178A9D72466FD4000807402 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9D62466FD4000807402 /* UIColor.swift */; };
-		3178A9D924671F4400807402 /* RoomsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9D824671F4400807402 /* RoomsManager.swift */; };
+		3178A9D924671F4400807402 /* RoomsManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9D824671F4400807402 /* RoomsManagerView.swift */; };
 		3178A9DB2467225E00807402 /* HomeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9DA2467225E00807402 /* HomeObserver.swift */; };
 		3178A9DD246722AD00807402 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9DC246722AD00807402 /* Room.swift */; };
 		3178A9DF246722F900807402 /* LED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9DE246722F900807402 /* LED.swift */; };
@@ -68,7 +68,7 @@
 		314D9C7E246615BC005AD3B6 /* UserIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentifier.swift; sourceTree = "<group>"; };
 		314D9C802466173F005AD3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3178A9D62466FD4000807402 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		3178A9D824671F4400807402 /* RoomsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsManager.swift; sourceTree = "<group>"; };
+		3178A9D824671F4400807402 /* RoomsManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsManagerView.swift; sourceTree = "<group>"; };
 		3178A9DA2467225E00807402 /* HomeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeObserver.swift; sourceTree = "<group>"; };
 		3178A9DC246722AD00807402 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		3178A9DE246722F900807402 /* LED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LED.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				314D9C4B24661552005AD3B6 /* AppDelegate.swift */,
 				314D9C4D24661552005AD3B6 /* SceneDelegate.swift */,
 				314D9C5224661552005AD3B6 /* ContentView.swift */,
-				3178A9D824671F4400807402 /* RoomsManager.swift */,
+				3178A9D824671F4400807402 /* RoomsManagerView.swift */,
 				3178A9E02467351500807402 /* Globals.swift */,
 				3178A9DA2467225E00807402 /* HomeObserver.swift */,
 				3178A9DC246722AD00807402 /* Room.swift */,
@@ -455,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3178A9D924671F4400807402 /* RoomsManager.swift in Sources */,
+				3178A9D924671F4400807402 /* RoomsManagerView.swift in Sources */,
 				314D9C7F246615BC005AD3B6 /* UserIdentifier.swift in Sources */,
 				3178A9D72466FD4000807402 /* UIColor.swift in Sources */,
 				314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */,

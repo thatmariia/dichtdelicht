@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LED {
+struct LED : Hashable {
     var name: String
     var pattern_name: String = "static"
     

@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Room {
+struct Room : Hashable {
     var name: String
     var LEDs: [LED]
 }

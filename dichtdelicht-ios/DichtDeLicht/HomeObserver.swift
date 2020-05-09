@@ -24,8 +24,6 @@ class HomeObserver : ObservableObject {
                 print("Error home_err: \(home_err!.localizedDescription)")
                 return
             }
-            
-            self.rooms = []
 
             /// go through home (should only be snap of len 1)
             for doc in home_snap!.documents {
@@ -40,7 +38,6 @@ class HomeObserver : ObservableObject {
                     /// go though rooms in a home
                     for room in rooms_snap!.documents{
                         let room_name = room.get("name") as! String
-                        var room_LEDs : [LED] = []
                         
                         let LEDs = rooms.document(room.documentID).collection("LED")
                         LEDs.getDocuments { (LEDs_snap, LEDs_err) in
@@ -50,6 +47,9 @@ class HomeObserver : ObservableObject {
                             }
                             
                             /// go through leds in a room
+                            self.rooms = []
+                            var room_LEDs : [LED] = []
+                            
                             for led in LEDs_snap!.documents {
                                 let new_LED = LED(name        : led.get("name")         as! String,
                                                   pattern_name: led.get("pattern_name") as! String,
@@ -58,10 +58,10 @@ class HomeObserver : ObservableObject {
                                                   B: led.get("B") as! Int)
                                 room_LEDs.append(new_LED)
                             }
+                            
+                            let new_room = Room(name: room_name, LEDs: room_LEDs)
+                            self.rooms.append(new_room)
                         }
-                        
-                        let new_room = Room(name: room_name, LEDs: room_LEDs)
-                        self.rooms.append(new_room)
                     }
                     
                     

@@ -9,14 +9,14 @@
 import SwiftUI
 import ColorPicker
 
-struct RoomsManager: View {
+struct RoomsManagerView: View {
     
     var user_home = "royal_house" // TODO:: pass this
     @ObservedObject var user : UserIdentifier
     
-    
-    
     @ObservedObject var home : HomeObserver
+    @State var curr_room : Room = Room(name: "", LEDs: [])
+    
     @State var color = UIColor.red
     
     var body: some View {
@@ -27,6 +27,29 @@ struct RoomsManager: View {
             Text("Rooms: " + array_to_string(array: get_room_names()))
             
             Spacer()
+            
+            Text("Choose a room")
+            if (get_room_names().count == 0){
+                Text("You have no rooms")
+            } else {
+                ScrollView(.vertical, showsIndicators: true){
+                    HStack {
+                        ForEach(home.rooms, id: \.self) { room in
+                            
+                            ZStack {
+                                Button(action: {
+                                    self.curr_room = room
+                                }) {
+                                    Text(room.name)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            Text("curr room = " + curr_room.name)
+            Text("leds = " +  "\(curr_room.LEDs)")
             
             ColorPicker(color: $color, strokeWidth: 30)
                 .frame(width: 300, height: 300, alignment: .center)
@@ -44,9 +67,9 @@ struct RoomsManager: View {
     }
 }
 
-struct RoomsManager_Previews: PreviewProvider {
+struct RoomsManagerView_Previews: PreviewProvider {
     static var previews: some View {
-        RoomsManager(user: UserIdentifier(), home: HomeObserver(home_name: "royal_house"))
+        RoomsManagerView(user: UserIdentifier(), home: HomeObserver(home_name: "royal_house"))
     }
 }
 
