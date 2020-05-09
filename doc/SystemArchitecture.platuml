@@ -6,35 +6,33 @@ cloud {
   HTTPS - [Calender data]
 }
 
-node "RaspberryPi" {
-    folder Room/Instance {
-        [RGB data]
-  }
-  [Server] <-left-> [RGB data] : r+w
-  [Server] - HTTP
-  [Controller] .up.> HTTPS : uses
-  [Controller] ..> HTTP : uses
+cloud {
+  [Firebase]
+  interface HTTPS as fHTTPS
+  fHTTPS - [Firebase]
 }
 
-note right of Server: Exposes the RGB data\n and updates it upon request.
+node "RaspberryPi" {
+  [Controller] .up.> HTTPS : uses
+  [Controller] ..> fHTTPS : uses
+}
 
-note right of HTTP: Web Service
 
 node "ESP Ledstrip (RoomX; ObjectX)" {
   [LED Controller] as LEDC1
   interface GPIO as GPIO1
   [LED strip] as LED1
 
-  HTTP <.left. LEDC1 : uses
+  fHTTPS <.up. LEDC1 : uses
   LEDC1 .> GPIO1 : uses
   GPIO1 - LED1
 }
 
 node "Iphone" {
-  HTTP <.. [Application] : uses
-  [Siri API] <.. [Application] :uses
+  fHTTPS <... [Application] : uses
+  [Siri API] <.up. [Application] :uses
 }
 
-note right of Iphone: Iphone can overwrite the LEDs \n in a room. \n It can also update the setting of the controller.
+note right of Iphone: Iphone can overwrite the LEDs in a room. \n It can also update the setting of the controller.
 
 @enduml
