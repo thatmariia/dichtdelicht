@@ -15,6 +15,7 @@ class UserIdentifier : ObservableObject  {
     
     @Published var user_id = ""
     @Published var username = ""
+    @Published var is_first_login = false
     
     init() {
         
@@ -24,6 +25,7 @@ class UserIdentifier : ObservableObject  {
         
         if (!is_existing_user){
             add_user_firebase(with: user_id)
+            self.is_first_login = true
         }
         
         listen_user_firebase(with: user_id)
