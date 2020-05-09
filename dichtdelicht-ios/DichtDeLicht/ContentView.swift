@@ -7,23 +7,21 @@
 //
 
 import SwiftUI
-import ColorPicker
 
 struct ContentView: View {
     
     @ObservedObject var user : UserIdentifier
-    @State var color = UIColor.red
     
     var body: some View {
         VStack{
-            //Text(user.user.user_id)
-            Text("Hi there, " + user.username)
             
-            Spacer()
-            
-            ColorPicker(color: $color, strokeWidth: 30)
-                .frame(width: 300, height: 300, alignment: .center)
-            Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
+            if (user.is_first_login){
+                // if user logged in for the first time
+                // TODO:: go setup the username, and add or search for home & rooms
+            } else {
+                // TODO:: choose home (view with home choosing if more than 1? or make a default?)
+                RoomsManager(user: UserIdentifier())
+            }
         }
     }
 }

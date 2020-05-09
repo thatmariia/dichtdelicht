@@ -17,6 +17,8 @@ class UserIdentifier : ObservableObject  {
     @Published var username = ""
     @Published var is_first_login = false
     
+    @Published var home_names = [String]()
+    
     init() {
         
         let core_user = get_coredata_uuid()
@@ -45,8 +47,9 @@ class UserIdentifier : ObservableObject  {
                 return
             }
             let data = snap!.documents[0]
-            self.user_id = data.get("user_id")  as! String
-            self.username = data.get("username") as! String
+            self.user_id    = data.get("user_id")    as! String
+            self.username   = data.get("username")   as! String
+            self.home_names = data.get("home_names") as! [String]
         }
     }
     
