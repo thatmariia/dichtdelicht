@@ -7,11 +7,12 @@
 //
 
 import SwiftUI
-import ColorKit
+import ColorPicker
 
 struct ContentView: View {
     
     @ObservedObject var user : UserIdentifier
+    @State var color = UIColor.red
     
     var body: some View {
         VStack{
@@ -20,7 +21,9 @@ struct ContentView: View {
             
             Spacer()
             
-            ColorWheel(color: .constant(ColorToken(hue: 0.3, saturation: 1, brightness: 0.6)))
+            ColorPicker(color: $color, strokeWidth: 30)
+                .frame(width: 300, height: 300, alignment: .center)
+            //Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
         }
     }
 }
