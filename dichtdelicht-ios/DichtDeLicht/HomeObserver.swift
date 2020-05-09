@@ -13,6 +13,8 @@ import Firebase
 /// takes a home name and fetches all the rooms of this home
 class HomeObserver : ObservableObject {
     @Published var rooms = [Room]()
+    @Published var home_id = ""
+    
     var home_name: String = "royal_house"
     
     init(home_name: String) {
@@ -28,9 +30,15 @@ class HomeObserver : ObservableObject {
                 print("Error home_err: \(home_err!.localizedDescription)")
                 return
             }
+            
+            if (home_snap!.documents.count > 1){
+                print("we have more than 1 home with the same name")
+                return
+            }
 
             /// go through home (should only be snap of len 1)
             for doc in home_snap!.documents {
+                self.home_id = doc.documentID
                 
                 let rooms = homes.document(doc.documentID).collection("rooms")
                 rooms.getDocuments { (rooms_snap, rooms_err) in
@@ -43,6 +51,7 @@ class HomeObserver : ObservableObject {
                     self.rooms = []
                     for room in rooms_snap!.documents{
                         let room_name = room.get("name") as! String
+                        let room_id = room.documentID
                         
                         let LEDs = rooms.document(room.documentID).collection("LED")
                         LEDs.getDocuments { (LEDs_snap, LEDs_err) in
@@ -55,7 +64,8 @@ class HomeObserver : ObservableObject {
                             var room_LEDs : [LED] = []
                             
                             for led in LEDs_snap!.documents {
-                                let new_LED = LED(name        : led.get("name")         as! String,
+                                let new_LED = LED(doc_id: led.documentID,
+                                                  name        : led.get("name")         as! String,
                                                   pattern_name: led.get("pattern_name") as! String,
                                                   R: led.get("R") as! Int,
                                                   G: led.get("G") as! Int,
@@ -63,7 +73,7 @@ class HomeObserver : ObservableObject {
                                 room_LEDs.append(new_LED)
                             }
                             
-                            let new_room = Room(name: room_name, LEDs: room_LEDs)
+                            let new_room = Room(doc_id: room_id, name: room_name, LEDs: room_LEDs)
                             self.rooms.append(new_room)
                         }
                     }

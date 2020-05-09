@@ -8,10 +8,5 @@
 
 import Foundation
 
-func array_to_string(array: [String]) -> String{
-    var str = ""
-    for el in array{
-        str += el
-    }
-    return str
-}
+let ALL_ROOMS = "All rooms"
+let ALL_LEDS = "All LEDs"

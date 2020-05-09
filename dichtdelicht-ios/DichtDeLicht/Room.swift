@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 
 struct Room : Hashable {
+    var doc_id: String
+    
     var name: String
     var LEDs: [LED]
 }

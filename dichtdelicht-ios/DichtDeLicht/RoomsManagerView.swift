@@ -14,9 +14,8 @@ struct RoomsManagerView: View {
     @ObservedObject var user : UserIdentifier
     
     @ObservedObject var home : HomeObserver
-    @State var curr_room : Room = Room(name: "", LEDs: [])
+    @State var curr_room : Room = Room(doc_id: "", name: "", LEDs: [])
     @State var curr_LEDs : [LED] = []
-    
     
     var body: some View {
         NavigationView{
@@ -42,7 +41,10 @@ struct RoomsManagerView: View {
     
     fileprivate func goto_ColorWheel() -> some View {
         return ZStack{
-            NavigationLink(destination: ColorWheelView().navigationBarTitle("")) {
+            NavigationLink(destination: ColorWheelView(home: HomeObserver(home_name: user_home),
+                                                       user_home: user_home,
+                                                       curr_room: curr_room,
+                                                       curr_LEDs: curr_LEDs).navigationBarTitle("")) {
                 Text("Color Wheel")}
         }
     }
@@ -57,7 +59,7 @@ struct RoomsManagerView: View {
             }
         }
         
-        return Room(name: "All rooms", LEDs: all_LEDs)
+        return Room(doc_id: "", name: ALL_ROOMS, LEDs: all_LEDs)
     }
     
     fileprivate func rooms_stack() -> some View {
@@ -79,7 +81,7 @@ struct RoomsManagerView: View {
                 Button(action: {
                     self.curr_room = self.combine_all_rooms()
                 }) {
-                    Text("All rooms")
+                    Text(ALL_ROOMS)
                 }
             }
         }
@@ -130,7 +132,7 @@ struct RoomsManagerView: View {
                 Button(action: {
                     self.curr_LEDs = self.combine_all_LEDs()
                 }) {
-                    Text("All LEDs")
+                    Text(ALL_LEDS)
                 }
             }
         }
