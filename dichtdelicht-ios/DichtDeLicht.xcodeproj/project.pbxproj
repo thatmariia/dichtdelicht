@@ -27,6 +27,7 @@
 		3178A9DD246722AD00807402 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9DC246722AD00807402 /* Room.swift */; };
 		3178A9DF246722F900807402 /* LED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9DE246722F900807402 /* LED.swift */; };
 		3178A9E12467351500807402 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178A9E02467351500807402 /* Globals.swift */; };
+		31816D2724675209004E6128 /* ColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31816D2624675209004E6128 /* ColorWheelView.swift */; };
 		AFA8CAF2169BB88B9AF6C007 /* Pods_DichtDeLicht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */; };
 		BF225975E035729A72FD5A59 /* Pods_DichtDeLicht_DichtDeLichtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E157503302B0D79C7530680D /* Pods_DichtDeLicht_DichtDeLichtUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		3178A9DC246722AD00807402 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		3178A9DE246722F900807402 /* LED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LED.swift; sourceTree = "<group>"; };
 		3178A9E02467351500807402 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		31816D2624675209004E6128 /* ColorWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheelView.swift; sourceTree = "<group>"; };
 		4710527593527EFBE63A5367 /* Pods_DichtDeLicht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DichtDeLicht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52140E9647ABF5B164744F95 /* Pods-DichtDeLichtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.debug.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C87852DACA5C56E760F5F1C /* Pods-DichtDeLichtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DichtDeLichtTests.release.xcconfig"; path = "Target Support Files/Pods-DichtDeLichtTests/Pods-DichtDeLichtTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				314D9C4D24661552005AD3B6 /* SceneDelegate.swift */,
 				314D9C5224661552005AD3B6 /* ContentView.swift */,
 				3178A9D824671F4400807402 /* RoomsManagerView.swift */,
+				31816D2624675209004E6128 /* ColorWheelView.swift */,
 				3178A9E02467351500807402 /* Globals.swift */,
 				3178A9DA2467225E00807402 /* HomeObserver.swift */,
 				3178A9DC246722AD00807402 /* Room.swift */,
@@ -461,6 +464,7 @@
 				314D9C5124661552005AD3B6 /* DichtDeLicht.xcdatamodeld in Sources */,
 				314D9C4C24661552005AD3B6 /* AppDelegate.swift in Sources */,
 				3178A9E12467351500807402 /* Globals.swift in Sources */,
+				31816D2724675209004E6128 /* ColorWheelView.swift in Sources */,
 				3178A9DD246722AD00807402 /* Room.swift in Sources */,
 				314D9C5324661552005AD3B6 /* ContentView.swift in Sources */,
 				3178A9DB2467225E00807402 /* HomeObserver.swift in Sources */,

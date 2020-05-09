@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import ColorPicker
 
 struct RoomsManagerView: View {
     
@@ -18,7 +17,36 @@ struct RoomsManagerView: View {
     @State var curr_room : Room = Room(name: "", LEDs: [])
     @State var curr_LEDs : [LED] = []
     
-    @State var color = UIColor.red
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                
+                Text("Hi there, " + user.username)
+                Text("Home: " + user_home)
+                
+                // TODO:: assign some initial values to a room and LED
+                room_choose()
+                if (curr_room.name != ""){
+                    LED_choose()
+                    
+                    if (curr_LEDs.count == 0){
+                        Text("Please select a LED strip")
+                    } else { goto_ColorWheel() }
+                    
+                }
+                Spacer()
+            }.padding()
+        }
+    }
+    
+    fileprivate func goto_ColorWheel() -> some View {
+        return ZStack{
+            NavigationLink(destination: ColorWheelView().navigationBarTitle("")) {
+                Text("Color Wheel")}
+        }
+    }
+    
     
     fileprivate func combine_all_rooms() -> Room {
         var all_LEDs : [LED] = []
@@ -69,7 +97,7 @@ struct RoomsManagerView: View {
             }
         }
     }
-
+    
     
     fileprivate func combine_all_LEDs() -> [LED] {
         var all_LEDs : [LED] = []
@@ -120,42 +148,8 @@ struct RoomsManagerView: View {
             }
         }
     }
-    
-    var body: some View {
-        VStack{
-
-            Text("Hi there, " + user.username)
-            Text("Home: " + user_home)
-            
-            Spacer()
-            
-            // TODO:: assign some initial values to a room and LED
-            room_choose()
-            
-            if (curr_room.name != ""){
-                LED_choose()
-            }
-
-            Text("curr room = " + curr_room.name)
-            Text("leds = " +  "\(curr_LEDs)")
-            
-            VStack{
-                ColorPicker(color: $color, strokeWidth: 30)
-                    .frame(width: 300, height: 300, alignment: .center)
-                Text("\(color.rgba.red), \(color.rgba.green), \(color.rgba.blue), \(color.rgba.alpha)")
-            }
-        }
-    }
-    
-    func get_room_names() -> [String]{
-        var room_names : [String] = []
-        
-        for room in home.rooms {
-            room_names.append(room.name)
-        }
-        return room_names
-    }
 }
+
 
 struct RoomsManagerView_Previews: PreviewProvider {
     static var previews: some View {
