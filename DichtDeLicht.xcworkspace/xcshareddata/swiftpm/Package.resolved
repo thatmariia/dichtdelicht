@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "bez",
+        "repositoryURL": "https://github.com/kieranb662/bez.git",
+        "state": {
+          "branch": null,
+          "revision": "85160562a226b72278b7bc60762cf768b3ae53db",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "CGExtender",
+        "repositoryURL": "https://github.com/kieranb662/CGExtender.git",
+        "state": {
+          "branch": null,
+          "revision": "8eedfa659a87cf16b086a162c6716e4e2836af56",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "Shapes",
+        "repositoryURL": "https://github.com/kieranb662/Shapes.git",
+        "state": {
+          "branch": null,
+          "revision": "f8f1f040b9e1a251386411e255c438c68569a8e5",
+          "version": "1.0.7"
+        }
+      },
+      {
+        "package": "Sliders",
+        "repositoryURL": "https://github.com/kieranb662/Sliders.git",
+        "state": {
+          "branch": null,
+          "revision": "cccc82d55b934917be59147ee4b8466601a570d2",
+          "version": "1.0.8"
+        }
+      },
+      {
+        "package": "ColorKit",
+        "repositoryURL": "https://github.com/kieranb662/SwiftUI-Color-Kit",
+        "state": {
+          "branch": null,
+          "revision": "676e90c09030794140ef18245cfbce59df62965e",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

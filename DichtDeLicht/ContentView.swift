@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ColorKit
 
 struct ContentView: View {
     
@@ -18,6 +19,8 @@ struct ContentView: View {
             Text("Hi there, " + user.user.username)
             
             Spacer()
+            
+            ColorWheel(color: .constant(ColorToken(hue: 0.3, saturation: 1, brightness: 0.6)))
         }
     }
 }
