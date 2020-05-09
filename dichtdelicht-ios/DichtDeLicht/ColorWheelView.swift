@@ -10,6 +10,7 @@ import SwiftUI
 import ColorPicker
 import Firebase
 
+/// selecting a new color for given LEDs with color wheel
 struct ColorWheelView: View {
     // TODO:: make initial value be a value from firebase
     @State var color = UIColor.red

@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 
+// TODO:: add change listeners
+
+/// takes a username and fetches all the home names of this user
 class UserHomesObserver : ObservableObject {
     @Published var home_names = [String]()
     var username = ""

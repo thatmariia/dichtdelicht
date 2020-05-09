@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+
+/// View where a user selects the following:
+/// - room(s) to change LEDs in
+/// - LEDs to change in selected rooms
+/// - method to change the LEDs
 struct RoomsManagerView: View {
     
     var user_home : String

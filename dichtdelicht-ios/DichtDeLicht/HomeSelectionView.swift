@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+
+/// View where a user selects it's home
 struct HomeSelectionView: View {
     
     @ObservedObject var user : UserIdentifier
@@ -18,6 +20,8 @@ struct HomeSelectionView: View {
     var body: some View {
         NavigationView{
         VStack{
+            
+            // TODO:: figure out why it doesnt always display homes
             Text("Choose a home:")
             if (user.home_names.count == 0){
                 Text("You have no homes")
