@@ -12,9 +12,23 @@ struct LED : Hashable {
     var doc_id: String
     
     var name: String
-    var pattern_name: String = "static"
     
     var R: Int
     var G: Int
     var B: Int
+    
+    var pattern: Pattern
+}
+
+struct Pattern : Hashable {
+    var type: String
+    var rpm: Float
+    var frquency: Float
+}
+
+func get_pattern(from pattern_firebase: [String: Any]) -> Pattern{
+    let new_pattern = Pattern(type    : pattern_firebase["type"]      as! String,
+                              rpm     : pattern_firebase["rpm"]       as! Float,
+                              frquency: pattern_firebase["frequency"] as! Float)
+    return new_pattern
 }
