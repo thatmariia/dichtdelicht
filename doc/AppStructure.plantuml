@@ -1,0 +1,64 @@
+@startuml
+
+title iOS app structure
+
+class UserIdentifier {
+  Identifies user, if exists
+  Creates user, if doesn't
+}
+
+class ContentView {
+  Determines next View based on
+  whether logged in for the 1st time
+}
+note right of ContentView {
+  TODO:
+  if user logged in
+  for the 1st time
+}
+
+class UserHomesObserver {
+  Listens to homes user has
+}
+note left of UserHomesObserver {
+  TODO:
+  listen to changes
+}
+
+class HomeSelectionView {
+  Selects 1 of user's homes
+}
+note right of HomeSelectionView {
+  TODO:
+  make it possible to
+  select multiple
+  rooms/LEDs
+}
+
+class HomeObserver {
+  Listen to rooms in a home
+  and LEDs in each room
+}
+note left of HomeObserver {
+  TODO:
+  listen to changes
+}
+
+class RoomsManagerView {
+  View where a user selects
+  LEDs to change
+}
+
+class ColorWheelView {
+  Updating selected LEDs with
+  Color Wheel
+}
+
+UserIdentifier -> ContentView
+ContentView --> HomeSelectionView
+UserHomesObserver -> HomeSelectionView
+HomeSelectionView --> RoomsManagerView
+HomeObserver -> RoomsManagerView
+RoomsManagerView --> ColorWheelView
+
+@enduml
