@@ -47,31 +47,38 @@ struct HomeSelectionView: View {
                     return
                 }
                 if (self.home_search_result.name != ""){
-                    
-                    let homes_collection = DB.collection("home")
-                    let home_query = homes_collection.whereField("name", isEqualTo: self.home_search_result.name)
-                    home_query.addSnapshotListener { (home_snap, home_err) in
-                        if (home_err != nil) {
-                            print("Error err: \(home_err!.localizedDescription)")
-                            return
-                        }
-                        if (home_snap!.documents.count > 1){
-                            print("we've got more than 1 home with name \(self.home_search_result.name)")
-                            return
-                        }
-                        /// should be len 1
-                        for _ in home_snap!.documents {
-                            self.home_search_result.is_found = true
-                            // TODO:: add the found home to user
-                            
-                        }
-                    }
-                    // search for home
-                    // add home
+                    self.process_found_home()
                 }
             }
         }
-        
+    }
+    
+    fileprivate func assign_home() {
+        let user_path = DB.collection("users").document(self.user.doc_id)
+        user_path.updateData([
+            "home_names" : FieldValue.arrayUnion([self.home_search_result.name])
+        ])
+    }
+    
+    fileprivate func process_found_home() {
+        let homes_collection = DB.collection("home")
+        let home_query = homes_collection.whereField("name", isEqualTo: self.home_search_result.name)
+        home_query.addSnapshotListener { (home_snap, home_err) in
+            if (home_err != nil) {
+                print("Error err: \(home_err!.localizedDescription)")
+                return
+            }
+            if (home_snap!.documents.count > 1){
+                print("we've got more than 1 home with name \(self.home_search_result.name)")
+                return
+            }
+            /// should be len 1
+            for _ in home_snap!.documents {
+                self.home_search_result.is_found = true
+                self.assign_home()
+                
+            }
+        }
     }
     
     fileprivate func home_choose() -> some View {
