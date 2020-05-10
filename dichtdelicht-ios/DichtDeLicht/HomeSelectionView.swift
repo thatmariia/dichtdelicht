@@ -48,7 +48,7 @@ struct HomeSelectionView: View {
                 }
                 if (self.home_search_result.name != ""){
                     
-                    let homes_collection = Firestore.firestore().collection("home")
+                    let homes_collection = DB.collection("home")
                     let home_query = homes_collection.whereField("name", isEqualTo: self.home_search_result.name)
                     home_query.addSnapshotListener { (home_snap, home_err) in
                         if (home_err != nil) {

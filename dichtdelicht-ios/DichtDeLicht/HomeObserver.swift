@@ -21,7 +21,7 @@ class HomeObserver : ObservableObject {
     init(home_name: String) {
         self.home_name = home_name
         
-        let homes = Firestore.firestore().collection("home")
+        let homes = DB.collection("home")
         
         let home_query = homes.whereField("name", isEqualTo: home_name)
         

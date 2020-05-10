@@ -36,7 +36,7 @@ struct ColorWheelView: View {
     }
     
     fileprivate func update_color_firebase() {
-        let home_path = Firestore.firestore().collection("home").document(home.home_id)
+        let home_path = DB.collection("home").document(home.home_id)
         
         /// get ids of all the rooms where changing
         let changing_room_ids = get_room_ids(home_path: home_path)

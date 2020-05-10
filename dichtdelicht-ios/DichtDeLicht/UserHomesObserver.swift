@@ -19,7 +19,7 @@ class UserHomesObserver : ObservableObject {
     init(username: String) {
         self.username = username
         
-        let user_query = Firestore.firestore().collection("users").whereField("username", isEqualTo: self.username)
+        let user_query = DB.collection("users").whereField("username", isEqualTo: self.username)
         user_query.addSnapshotListener { (snap, err) in
             if (err != nil) {
                 print("Error err: \(err!.localizedDescription)")
