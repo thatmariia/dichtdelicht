@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct LED : Hashable {
     var doc_id: String
@@ -24,6 +25,18 @@ struct Pattern : Hashable {
     var type: String
     var rpm: Float
     var frquency: Float
+}
+
+func get_LED(from led: QueryDocumentSnapshot) -> LED {
+    let pattern_dict = get_pattern(from: led.get("pattern") as! [String : Any])
+    let new_LED = LED(doc_id: led.documentID,
+                      name: led.get("name") as! String,
+                      R: led.get("R") as! Int,
+                      G: led.get("G") as! Int,
+                      B: led.get("B") as! Int,
+                      pattern: pattern_dict)
+    return new_LED
+    
 }
 
 func get_pattern(from pattern_firebase: [String: Any]) -> Pattern{

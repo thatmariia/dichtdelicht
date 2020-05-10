@@ -65,16 +65,7 @@ class HomeObserver : ObservableObject {
                             var room_LEDs : [LED] = []
                             
                             for led in LEDs_snap!.documents {
-                                print(led.documentID)
-        
-                                let pattern_dict = get_pattern(from: led.get("pattern") as! [String : Any])
-                                let new_LED = LED(doc_id: led.documentID,
-                                                  name: led.get("name") as! String,
-                                                  R: led.get("R") as! Int,
-                                                  G: led.get("G") as! Int,
-                                                  B: led.get("B") as! Int,
-                                                  pattern: pattern_dict)
-                                room_LEDs.append(new_LED)
+                                room_LEDs.append(get_LED(from: led))
                             }
                             
                             let new_room = Room(doc_id: room_id, name: room_name, LEDs: room_LEDs)

@@ -90,7 +90,6 @@ struct HomeSelectionView: View {
                                     Text(home_name)
                                 }
                             }
-                            
                         }
                     }
                 }
