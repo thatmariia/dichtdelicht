@@ -13,6 +13,8 @@ import CoreData
 
 class UserIdentifier : ObservableObject  {
     
+    @Published var doc_id = ""
+    
     @Published var user_id = ""
     @Published var username = ""
     @Published var is_first_login = false
@@ -35,7 +37,7 @@ class UserIdentifier : ObservableObject  {
     
     /// listens to user in firebase
     func listen_user_firebase(with user_id: String){
-        let collection = Firestore.firestore().collection("users")
+        let collection = DB.collection("users")
         let user = collection.whereField("user_id", isEqualTo: user_id)
         user.addSnapshotListener { (snap, err) in
             if (err != nil) {
@@ -47,6 +49,7 @@ class UserIdentifier : ObservableObject  {
                 return
             }
             let data = snap!.documents[0]
+            self.doc_id     = data.documentID
             self.user_id    = data.get("user_id")    as! String
             self.username   = data.get("username")   as! String
             //print("DATABASE HOME_NAMES:")
@@ -57,7 +60,7 @@ class UserIdentifier : ObservableObject  {
     
     /// adds a new user to firebase
     func add_user_firebase(with user_id: String){
-        let collection = Firestore.firestore().collection("users")
+        let collection = DB.collection("users")
         // add user to database
         collection.addDocument(data: ["user_id" :  user_id,
                                       "username" : "meow_username"]) { (err) in
