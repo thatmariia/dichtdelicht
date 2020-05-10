@@ -16,11 +16,10 @@ struct ContentView: View {
         VStack{
             
             if (user.is_first_login){
-                // if user logged in for the first time
-                // TODO:: go setup the username, and add or search for home & rooms
+                UserSettingsView(user: UserIdentifier())
             } else {
-                HomeSelectionView(user: UserIdentifier(),
-                                  user_homes: UserHomesObserver(username: user.username))
+                HomeSelectionView(user: user,
+                                  user_homes: UserHomesObserver(user_id: user.user_id))
             }
         }
     }

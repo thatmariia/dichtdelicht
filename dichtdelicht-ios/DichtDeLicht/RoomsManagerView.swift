@@ -27,6 +27,11 @@ struct RoomsManagerView: View {
             VStack{
                 
                 Text("Hi there, " + user.username)
+                
+                NavigationLink(destination: UserSettingsView(user: user)) {
+                    Text("User settings")
+                }
+                
                 Text("Home: " + user_home)
                 
                 // TODO:: assign some initial values to a room and LED

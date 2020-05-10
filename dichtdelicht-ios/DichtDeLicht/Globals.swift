@@ -13,3 +13,5 @@ let ALL_ROOMS = "All rooms"
 let ALL_LEDS = "All LEDs"
 
 let DB = Firestore.firestore()
+
+let ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyz0123456789_"

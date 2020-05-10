@@ -18,51 +18,64 @@ struct HomeSelectionView: View {
     
     @State var curr_home_name = ""
     
-    @State var home_search_result = HomeSearchResult(is_found: false, name: "", is_in_list: false)
+    @State var home_search_result = HomeSearchResult(is_attempted: false, is_found: false, name: "", is_in_list: false)
     
     var body: some View {
         NavigationView{
-        VStack{
-            
-            // TODO:: add an option to add more homes
-            find_home()
-            
-            // TODO:: figure out why it doesnt always display homes
-            home_choose()
-            
-            Spacer()
-            
-        }.padding()
+            VStack{
+                
+                find_home()
+                
+                if (home_search_result.is_in_list) {
+                    Text("You already have this home")
+                }
+                if (home_search_result.is_attempted) {
+                    Text("Searching for \(home_search_result.name)")
+                    if (home_search_result.is_found) {
+                        Text("\(home_search_result.name) has been added to your homes")
+                    } else {
+                        Text("\(home_search_result.name) is not found")
+                    }
+                }
+                
+                Spacer()
+                
+                home_choose()
+                
+                Spacer()
+                
+            }.padding()
         }
-    }
+    } 
     
     fileprivate func find_home() -> some View {
         return VStack {
             Text("Find a home:")
             TextField("home finder", text: $home_search_result.name, onEditingChanged: { (changed) in
             }) {
+                print("Searching for \(self.home_search_result.name)")
                 if (self.user_homes.home_names.contains(self.home_search_result.name)) {
                     print("home already in list")
                     self.home_search_result.is_in_list = true
                     return
                 }
                 if (self.home_search_result.name != ""){
-                    self.process_found_home()
+                    self.process_home()
                 }
             }
         }
     }
     
     fileprivate func assign_home() {
-        let user_path = DB.collection("users").document(self.user.doc_id)
+        if (user.doc_id == ""){ return }
+        let user_path = DB.collection("users").document(user.doc_id)
         user_path.updateData([
-            "home_names" : FieldValue.arrayUnion([self.home_search_result.name])
+            "home_names" : FieldValue.arrayUnion([home_search_result.name])
         ])
     }
     
-    fileprivate func process_found_home() {
-        let homes_collection = DB.collection("home")
-        let home_query = homes_collection.whereField("name", isEqualTo: self.home_search_result.name)
+    fileprivate func process_home() {
+        let home_query = DB.collection("home").whereField("name", isEqualTo: self.home_search_result.name)
         home_query.addSnapshotListener { (home_snap, home_err) in
             if (home_err != nil) {
                 print("Error err: \(home_err!.localizedDescription)")
@@ -70,6 +83,13 @@ struct HomeSelectionView: View {
             }
             if (home_snap!.documents.count > 1){
                 print("we've got more than 1 home with name \(self.home_search_result.name)")
+                return
+            }
+            self.home_search_result.is_attempted = true
+            print("inside snap home finder")
+            
+            if (home_snap!.documents.count == 0){
+                self.home_search_result.is_found = false
                 return
             }
             /// should be len 1
@@ -82,6 +102,7 @@ struct HomeSelectionView: View {
     }
     
     fileprivate func home_choose() -> some View {
+        print("in home scroll with \(user_homes.home_names.count) homes")
         return VStack {
             Text("Choose a home:")
             if (user.home_names.count == 0){

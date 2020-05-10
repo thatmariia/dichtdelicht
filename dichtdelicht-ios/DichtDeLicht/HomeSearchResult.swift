@@ -9,6 +9,7 @@
 import Foundation
 
 struct HomeSearchResult {
+    var is_attempted: Bool
     var is_found: Bool
     var name: String
     var is_in_list: Bool

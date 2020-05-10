@@ -13,6 +13,8 @@ import CoreData
 
 class UserIdentifier : ObservableObject  {
     
+    var testing = true
+    
     @Published var doc_id = ""
     
     @Published var user_id = ""
@@ -28,8 +30,10 @@ class UserIdentifier : ObservableObject  {
         let user_id = core_user.1
         
         if (!is_existing_user){
-            add_user_firebase(with: user_id)
-            self.is_first_login = true
+            if (!self.is_first_login){
+                self.is_first_login = true
+                add_user_firebase(with: user_id)
+            }
         }
         
         listen_user_firebase(with: user_id)
@@ -48,28 +52,34 @@ class UserIdentifier : ObservableObject  {
                 print("more than 1 user with the same uuid")
                 return
             }
-            let data = snap!.documents[0]
-            self.doc_id     = data.documentID
-            self.user_id    = data.get("user_id")    as! String
-            self.username   = data.get("username")   as! String
-            //print("DATABASE HOME_NAMES:")
-            //print(data.get("home_names") as! [String])
-            self.home_names = data.get("home_names") as! [String]
+            /// should be len 1
+            for doc in snap!.documents{
+                self.doc_id     = doc.documentID
+                self.user_id    = doc.get("user_id")    as! String
+                self.username   = doc.get("username")   as! String
+                //print("DATABASE HOME_NAMES:")
+                //print(data.get("home_names") as! [String])
+                self.home_names = doc.get("home_names") as! [String]
+            }
         }
     }
     
     /// adds a new user to firebase
     func add_user_firebase(with user_id: String){
-        let collection = DB.collection("users")
+        let users_collection = DB.collection("users")
         // add user to database
-        collection.addDocument(data: ["user_id" :  user_id,
-                                      "username" : "meow_username"]) { (err) in
-                                        
-                                        if (err != nil) {
-                                            print("Error: \(err!.localizedDescription)")
-                                            return
-                                        }
+        let empty_home_names : [String] = []
+        let user_path = users_collection.document()
+        user_path.setData(["user_id" :  user_id,
+                           "username" : "meow_username",
+                           "home_names" :empty_home_names]) { (err) in
+                           
+                           if (err != nil) {
+                               print("Error: \(err!.localizedDescription)")
+                               return
+                           }
         }
+        self.doc_id = user_path.documentID
     }
     
     /// fetches a user_id if exists, generates one if doesnt
@@ -88,7 +98,10 @@ class UserIdentifier : ObservableObject  {
             var result = try context.fetch(request)
             
             if (result.count > 1){
-                result = remove_additionals(result: result, context: context)
+                //print("before result: \(result.count)")
+                result = remove_additionals(start_i: 1, result: result, context: context)
+                result = try context.fetch(request)
+                //print("updated result: \(result.count)")
             }
             
             if (result.count == 1){
@@ -98,6 +111,7 @@ class UserIdentifier : ObservableObject  {
                 
             } else if (result.count == 0){
                 let new_user_id = add_new_user_id(entity: entity, context: context)
+                print("*** new user id = \(new_user_id)")
                 coredata = (false, new_user_id)
             }
 
@@ -122,10 +136,10 @@ class UserIdentifier : ObservableObject  {
     }
     
     /// removes all users but 1 (first)
-    func remove_additionals(result: [Any], context: NSManagedObjectContext) -> [Any]{
+    func remove_additionals(start_i: Int, result: [Any], context: NSManagedObjectContext) -> [Any]{
         print("more than 1 user in coredata")
         
-        for i in 1..<result.count {
+        for i in start_i..<result.count {
             let object = result[i] as! NSManagedObject
             print("--remove")
             context.delete(object)
