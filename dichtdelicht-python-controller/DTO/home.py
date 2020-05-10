@@ -1,12 +1,12 @@
 from DTO.room import Room
 
 class Home:
-    def __init__(self, db_id, name, rooms: [Room]):
+    def __init__(self, db_id: str, name: str, rooms: [Room]):
         self.db_id = db_id
         self.name = name
         self.rooms = rooms
 
-    def to_dict(self):
+    def to_dict(self) -> {str, str}:
        return {
            u'name': self.name 
         } 
