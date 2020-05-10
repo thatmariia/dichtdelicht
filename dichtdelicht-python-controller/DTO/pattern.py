@@ -4,4 +4,4 @@ class Pattern:
         self.rpm = rpm
 
     def __str__(self):
-        return f"Pattern {{ name: '{self.name}', rpm: {self.rpm} }}" 
+        return f"Pattern {{ name: '{self.name}', rpm: {self.rpm}}}" 
